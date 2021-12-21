@@ -9,6 +9,7 @@ import androidx.core.app.NotificationManagerCompat;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AppOpsManager;
+import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -30,6 +31,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.qmuiteam.qmui.widget.dialog.QMUIBottomSheet;
+import com.qmuiteam.qmui.widget.dialog.QMUIBottomSheet.BottomListSheetBuilder;
+import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 
 import org.json.JSONObject;
 import org.xmlpull.v1.XmlSerializer;
@@ -48,7 +52,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MIN_HOME extends AppCompatActivity {
+public class MIN_HOME extends AppCompatActivity implements  QMUIBottomSheet.BottomListSheetBuilder.OnSheetItemClickListener {
 
     private TextView default_data;
     private Button Update;
@@ -58,7 +62,8 @@ public class MIN_HOME extends AppCompatActivity {
     public String Url = null;
     private Button href_url;
     public static MIN_HOME Instance = null;
-
+    private QMUIBottomSheet qmuiBottomSheet;
+    private QMUIDialog qmuiDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +77,8 @@ public class MIN_HOME extends AppCompatActivity {
         Logs.e("", "日志");
         CreatFile();
         initView();
-
+        qmuiBottomSheet = new QMUIBottomSheet(this,R.style.QMUI_BottomSheet);
+        qmuiBottomSheet.show();
     }
 
     private boolean isNotificationEnabled(Context context) {
@@ -358,4 +364,13 @@ public class MIN_HOME extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
+    public void onClick(QMUIBottomSheet dialog, View itemView, int position, String tag) {
+        dialog.show();
+    }
 }

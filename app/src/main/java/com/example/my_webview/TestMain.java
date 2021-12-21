@@ -93,6 +93,9 @@ public class TestMain extends Activity {
         if (null != this.gridView) {
             this.gridView.setAdapter(gridAdapter);
             this.gridAdapter.notifyDataSetChanged();
+            Intent intent = new Intent(TestMain.this,
+                    MIN_HOME.class);
+            TestMain.this.startActivity(intent);
             this.gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                 @Override
@@ -167,5 +170,10 @@ public class TestMain extends Activity {
 //        });
 //        dialog.setMessage("quit now?");
 //        dialog.create().show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

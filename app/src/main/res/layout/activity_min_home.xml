@@ -8,6 +8,7 @@
 
 
     <RelativeLayout
+        style="@style/QMUI.BaseDialog"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="20dp"
@@ -17,6 +18,13 @@
         android:background="@drawable/linerxml">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_centerHorizontal="true"
+            android:text="贵州布控球移动端配置"
+            />
+        <TextView
             android:id="@+id/default_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,15 +33,6 @@
             android:text="http://192.168.1.111:8081"
             android:textColor="#d3d3d3"
             android:textSize="18dp" />
-
-        <Button
-            android:id="@+id/Update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/default_data"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="修改" />
 
 
         <RelativeLayout
@@ -49,7 +48,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:hint="修改默认地址"/>
+                android:hint="修改默认地址"
+                android:text="http://"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/affirm_update"
@@ -57,14 +58,29 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/update_data"
                 android:layout_centerHorizontal="true"
-                android:text="确认修改" />
+                android:background="@drawable/update_but"
+                android:text="确认修改"
+                android:textColor="@color/white" />
         </RelativeLayout>
 
         <Button
             android:id="@+id/href_url"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:text="进入" />
+            android:layout_centerVertical="true"
+            android:background="@drawable/but_color"
+            android:text="登录"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/Update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/href_url"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/but_color"
+            android:text="配置服务器"
+            android:textColor="#318ab0" />
     </RelativeLayout>
 </RelativeLayout>

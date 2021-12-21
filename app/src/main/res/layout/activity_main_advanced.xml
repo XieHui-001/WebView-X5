@@ -13,14 +13,16 @@
         android:text="贵州布控球"
         android:textColor="#ff0000"
         android:textIsSelectable="false"
-        android:textSize="10sp" />
+        android:textSize="10sp"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/first_Text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tip"
-        android:background="#ffffff">
+        android:background="#ffffff"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/text"
@@ -46,6 +48,11 @@
         android:horizontalSpacing="1dp"
         android:numColumns="1"
         android:paddingTop="1dp"
-        android:verticalSpacing="1dp" />
+        android:verticalSpacing="1dp"
+        android:visibility="gone" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/img" />
 </RelativeLayout>
